@@ -24,7 +24,21 @@ public class QueryProcessor {
             int value2 = Integer.valueOf(string2);
             int result = value1 + value2;
             return String.valueOf(result);
-        } else { // TODO extend the programm here
+        } else if (query.contains("largest")) {
+            String[] valueStringArray = query.split(", ");
+            int[] valueArray = new int[valueStringArray.length];
+            for (int i = 0; i < valueStringArray.length; i++) {
+                valueArray[i] = Integer.valueOf(valueStringArray[i]);
+            }
+            int max = valueArray[0];
+            for (int i = 0; i < valueArray.length; i++) {
+                if (valueArray[i] > max) {
+                    max = valueArray[i];
+                }
+            }
+            return String.valueOf(max);
+        }
+        else { // TODO extend the programm here
             return "";
         }
     }
