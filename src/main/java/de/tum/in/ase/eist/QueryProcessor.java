@@ -20,20 +20,20 @@ public class QueryProcessor {
             string1 = string1.substring(0, string1.indexOf("plus") - 1);
             String string2 = query.substring(query.indexOf("plus ") + 1);
 
-            int value1 = Integer.valueOf(string1);
-            int value2 = Integer.valueOf(string2);
+            int value1 = Integer.parseInt(string1);
+            int value2 = Integer.parseInt(string2);
             int result = value1 + value2;
             return String.valueOf(result);
         } else if (query.contains("largest")) {
             String[] valueStringArray = query.split(", ");
             int[] valueArray = new int[valueStringArray.length];
             for (int i = 0; i < valueStringArray.length; i++) {
-                valueArray[i] = Integer.valueOf(valueStringArray[i]);
+                valueArray[i] = Integer.parseInt(valueStringArray[i]);
             }
             int max = valueArray[0];
-            for (int i = 0; i < valueArray.length; i++) {
-                if (valueArray[i] > max) {
-                    max = valueArray[i];
+            for (int j : valueArray) {
+                if (j > max) {
+                    max = j;
                 }
             }
             return String.valueOf(max);
