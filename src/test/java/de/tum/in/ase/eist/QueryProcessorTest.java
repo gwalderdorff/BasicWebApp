@@ -35,7 +35,7 @@ class QueryProcessorTest {
 		String actual = queryProcessor.process("what is 6 plus 19");
 		if (!(actual == "25")) {
 			fail("Your QueryProcessor is not adding properly.");
-		}
+		}//
 	}
 
 	@Test
