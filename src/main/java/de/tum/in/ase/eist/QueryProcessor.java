@@ -25,7 +25,8 @@ public class QueryProcessor {
             int result = value1 + value2;
             return String.valueOf(result);
         } else if (query.contains("largest")) {
-            String[] valueStringArray = query.split(", ");
+            String string = query.substring(query.indexOf(": ") + 1);
+            String[] valueStringArray = string.split(", ");
             int[] valueArray = new int[valueStringArray.length];
             for (int i = 0; i < valueStringArray.length; i++) {
                 valueArray[i] = Integer.parseInt(valueStringArray[i]);

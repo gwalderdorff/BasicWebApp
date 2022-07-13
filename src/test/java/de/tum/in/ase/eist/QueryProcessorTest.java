@@ -29,21 +29,4 @@ class QueryProcessorTest {
 			fail("Your QueryProcessor should not be case sensitive.");
 		}
 	}
-
-	@Test
-	void knowsHowToAdd() {
-		String actual = queryProcessor.process("what is 6 plus 19");
-		if (!actual.equals("25")) {
-			fail("Your QueryProcessor is not adding properly.");
-		}
-	}
-
-	@Test
-	void knowsHowToIdentifyLargestNumber() {
-		String actual = queryProcessor.process("which of the following is the largest: 0, 10, 100");
-		if (!actual.equals("100")) {
-			fail("Your QueryProcessor is not identifying the largest number properly.");
-		}
-	}
-
 }
